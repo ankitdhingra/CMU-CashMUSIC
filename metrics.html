@@ -1,0 +1,479 @@
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/maps/modules/map.js"></script>
+<script src="https://code.highcharts.com/maps/modules/data.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+<script type="text/javascript">
+
+$(function () {
+    $('#container1').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Peak Time of the Day',
+			style: {
+				fontSize : '20px',
+				color : '#000000'
+			}
+        },
+        subtitle: {
+            text: 'Number of downlaods throughout the day.',
+			style: {
+				fontSize : '15px',
+				color : '#000000'
+			}
+        },
+		colors: ['#00CF7F'],
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '15px',
+                    fontFamily: 'Verdana, sans-serif',
+					fontWeight: 'Bold',
+					color: '#000000'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Number of Downloads',
+				style : {
+					fontSize: '15px',
+					color: '#000000'
+				}
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        series: [{
+            name: 'Downloads',
+            data: [
+				['12am-3am', 9814],
+				['3am-6am', 9406],
+				['6am-9am', 11391],
+				['9am-12pm', 19013],
+				['12pm-3pm', 22867],
+				['3pm-6pm', 22441],
+				['6pm-9pm', 18620],
+				['9pm-12am', 15092]
+            ],
+            dataLabels: {
+                enabled: true,
+                color: '#000000',
+                align: 'center',
+                y: 0, // 10 pixels down from the top
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    });
+	
+	
+	$('#container2').highcharts({
+        chart: {
+            type: 'area'
+        },
+        title: {
+            text: 'Email Click Throughs',
+			style: {
+				fontSize : '20px',
+				color : '#000000'
+			}
+
+        },
+        subtitle: {
+            text: 'Number of emails sent vs Number of emails clicked ',
+			style: {
+				fontSize : '15px',
+				color : '#000000'
+			}
+        },
+        xAxis: {
+            allowDecimals: false,
+            categories: ["11/01/15 - Free song download", "11/15/15 - Original artwork","11/30/15 - Unreleased track", "12/08/15 - Limited time offer"],
+			labels : {
+				style: {
+						fontSize: '12px',
+						fontFamily: 'Verdana, sans-serif',
+						fontWeight: 'Bold',
+						color: '#000000'
+				 }
+			}
+            
+        },
+        yAxis: {
+            title: {
+                text: 'Count',
+				style : {
+					fontSize: '15px',
+					color: '#000000'
+				}
+            },
+			labels : {
+			}
+			
+        },
+        tooltip: {
+            //pointFormat: '{series.name} produced <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
+        },
+        plotOptions: {
+        },
+        series: [{
+            name: 'Emails Sent',
+            data: [300, 350, 390, 430],
+			color: "#ccf5e5"
+        }, {
+            name: 'Emails Clicked',
+            data: [120, 140, 150, 180],
+			color: "#00673f"
+        }]
+    });
+	
+	    data = [
+			{
+				"value": 2264,
+				"code": "nj" 
+			},
+			{
+				"value": 170,
+				"code": "ri" 
+			},
+			{
+				"value": 1178,
+				"code": "ma"
+			},
+			{
+				"value": 354,
+				"code": "ct"
+			},
+			{
+				"value": 909,
+				"code": "md"
+			},
+			{
+				"value": 3543,
+				"code": "ny" 
+			},
+			{
+				"value": 122,
+				"code": "de"
+			},
+			{
+				"value": 1518,
+				"code": "fl"
+			},
+			{
+				"value": 1054,
+				"code": "oh"
+			},
+			{
+				"value": 1312,
+				"code": "pa"
+			},
+			{
+				"value": 1715,
+				"code": "il"
+			},
+			{
+				"value": 4030,
+				"code": "ca"
+			},
+			{
+				"value": 1313,
+				"code": "va"
+			},
+			{
+				"value": 1341,
+				"code": "mi"
+			},
+			{
+				"value": 72,
+				"code": "hi"
+			},
+			{
+				"value": 537,
+				"code": "in"
+			},
+			{
+				"value": 891,
+				"code": "nc"
+			},
+			{
+				"value": 1188,
+				"code": "ga"
+			},
+			{
+				"value": 600,
+				"code": "tn"
+			},
+			{
+				"value": 161,
+				"code": "nh"
+			},
+			{
+				"value": 312,
+				"code": "sc"
+			},
+			{
+				"value": 284,
+				"code": "la"
+			},
+			{
+				"value": 314,
+				"code": "ky"
+			},
+			{
+				"value": 697,
+				"code": "wi"
+			},
+			{
+				"value": 995,
+				"code": "wa"
+			},
+			{
+				"value": 602,
+				"code": "al" 
+			},
+			{
+				"value": 499,
+				"code": "mo"
+			},
+			{
+				"value": 2116,
+				"code": "tx"
+			},
+			{
+				"value": 77,
+				"code": "wv"
+			},
+			{
+				"value": 179,
+				"code": "vt"
+			},
+			{
+				"value": 748,
+				"code": "mn"
+			},
+			{
+				"value": 75,
+				"code": "ms"
+			},
+			{
+				"value": 258,
+				"code": "ia"
+			},
+			{
+				"value": 113,
+				"code": "ar"
+			},
+			{
+				"value": 154,
+				"code": "ok"
+			},
+			{
+				"value": 604,
+				"code": "az"
+			},
+			{
+				"value": 773,
+				"code": "co"
+			},
+			{
+				"value": 124,
+				"code": "me"
+			},
+			{
+				"value": 669,
+				"code": "or"
+			},
+			{
+				"value": 258,
+				"code": "ks"
+			},
+			{
+				"value": 169,
+				"code": "ut"
+			},
+			{
+				"value": 246,
+				"code": "ne"
+			},
+			{
+				"value": 268,
+				"code": "nv"
+			},
+			{
+				"value": 76,
+				"code": "id"
+			},
+			{
+				"value": 112,
+				"code": "nm"
+			},
+			{
+				"value": 54,
+				"code": "sd"
+			},
+			{
+				"value": 51,
+				"code": "nd"
+			},
+			{
+				"value": 99,
+				"code": "mt"
+			},
+			{
+				"value": 45,
+				"code": "wy"
+			},
+			{
+				"value": 334,
+				"code": "ak"
+			}
+		];
+    
+        // Make codes uppercase to match the map data
+        $.each(data, function () {
+            this.code = this.code.toUpperCase();
+        });
+
+        // Instanciate the map
+        $('#container3').highcharts('Map', {
+
+            chart : {
+                borderWidth : 1
+            },
+
+            title : {
+                text : 'Artist Fan Base Distribution',
+				style: {
+					fontSize : '20px',
+					color : '#000000'
+				}
+            },
+
+            legend: {
+                layout: 'horizontal',
+                borderWidth: 0,
+                backgroundColor: 'rgba(255,255,255,0.85)',
+                floating: true,
+                verticalAlign: 'top',
+                y: 25
+            },
+
+            mapNavigation: {
+                enabled: true
+            },
+
+            colorAxis: {
+                min: 100,
+                max: 3000,
+                type: 'logrithmatic',
+                stops: [
+                    [0, '#ccf5e5'],
+                    [0.33, '#00cf7f'],
+                    [0.67, '#00cf7f'],
+                    [1, '#00673f']
+                ]
+            },
+
+            series : [{
+                animation: {
+                    duration: 1000
+                },
+                data : data,
+                mapData: Highcharts.maps['countries/us/us-all'],
+                joinBy: ['postal-code', 'code'],
+                dataLabels: {
+                    enabled: true,
+                    color: 'black',
+                    format: '{point.code}'
+                },
+                name: 'Fans',
+                tooltip: {
+                    pointFormat: '{point.code}: {point.value}'
+                }
+            }]
+        });
+
+		$('#container4').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Peak Day of the Week'
+        },
+        subtitle: {
+            text: 'Number of downloads per day'
+        },
+		colors: ['#00CF7F'],
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+				style: {
+						fontSize: '12px',
+						fontFamily: 'Verdana, sans-serif',
+						fontWeight: 'Bold',
+						color: '#000000'
+				 }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Number of Downloads',
+				style : {
+					fontSize: '15px',
+					color: '#000000'
+				}
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        series: [{
+            name: 'Downloads',
+            data: [
+					['Sunday'  , 14318],
+					['Monday'  , 16575],
+					['Tuesday' , 15464],
+					['Wednesday' , 14544],
+					['Thursday' , 13173],
+					['Friday' , 36871],
+					['Saturday' , 17699]
+            ],
+            dataLabels: {
+                enabled: true,
+                color: 'black',
+                align: 'center',
+                y: 0, // 10 pixels down from the top
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    }); 
+
+	
+});
+</script>
+
+<div id="container1" style="width: 600px; height: 400px; margin: 0 auto"></div>
+
+<div id="container2" style="width: 600px; height: 400px; margin: 40 auto"></div>
+
+<div id="container3" style="height: 600px; min-width: 410px; max-width: 700px; margin: 100 auto"></div>
+
+<div id="container4" style="width: 600px; height: 400px; margin: 40 auto"></div>
